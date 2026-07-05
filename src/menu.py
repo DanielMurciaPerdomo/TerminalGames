@@ -4,8 +4,19 @@ class Menu:
     def __init__(self, titulo):
         self.titulo = titulo
 
-    def display_menu(self):
+    def display_menu(self, games):
         """Showing the menu using the titulo """
-        print("*******************************")
-        print(f"        {self.titulo}         ")
-        print("*******************************")
+        is_running = True
+        while is_running:
+            print("*******************************")
+            print(f"        {self.titulo}         ")
+            print("*******************************")
+            for num, game in games.items():
+                print(f"{num}. {game.name}")
+            choice = int(input("Select the number of game to play or 0 to quit: "))
+            if choice in games.keys():
+                games[choice].display_game()
+            elif choice == 0:
+                is_running = False
+            else:
+                print("Invalid choice. Please select a valid game number.")
