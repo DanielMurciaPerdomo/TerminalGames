@@ -13,7 +13,11 @@ class Menu:
             print("*******************************")
             for num, game in games.items():
                 print(f"{num}. {game.name}")
-            choice = int(input("Select the number of game to play or 0 to quit: "))
+            choice = input("Select the number of game to play or 0 to quit: ")
+            if not choice.isdigit():
+                print("Invalid input. Please enter a number.")
+                continue
+            choice = int(choice)
             if choice in games.keys():
                 games[choice].display_game()
             elif choice == 0:
