@@ -18,6 +18,7 @@ class RPS(Game):
 
     def display_game(self):
         """Show the game to play"""
+        print("Welcome to Rock Paper Scissors!")
         is_running = True
         limite = math.ceil(self.best_of / 2)
         computer_point = 0
