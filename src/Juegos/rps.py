@@ -26,11 +26,7 @@ class RPS(Game):
         while is_running:
             choice = input("Rock, Paper or Scissors ?(Just one of them) or q to quit: \n").lower()
             computer = random.choice(self.options).lower()
-            #Ending game when the total points reach the limit
-            if choice == 'q' or player_point>= limite or computer_point >= limite:
-                is_running = False
-                self.score = 100 * (player_point - computer_point)
-                print(f"Game over! Final score: Player {player_point} - Computer {computer_point} Score: {self.score}")
+
 
             #Confirming the user input is valid
             if choice not in [option.lower() for option in self.options]:
@@ -53,3 +49,10 @@ class RPS(Game):
             else:
                 computer_point += 1
                 print(f"You lose! Points: Player {player_point} - Computer {computer_point}")
+
+                #Ending game when the total points reach the limit
+
+            if choice == 'q' or player_point == limite or computer_point == limite:
+                is_running = False
+                self.score = 100 * (player_point - computer_point)
+                print(f"Game over! Final score: Player {player_point} - Computer {computer_point} Score: {self.score}")
