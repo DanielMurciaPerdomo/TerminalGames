@@ -1,0 +1,12 @@
+# Ignorar documentación
+README.md
+.gitignore
+.dockerignore
+
+# Ignorar archivos locales de Git y entornos de desarrollo
+.git/
+.vscode/
+
+# Ignorar el caché de Python
+**/__pycache__/
+**/*.pyc
